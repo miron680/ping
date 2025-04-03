@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ping cheker 
+tämä näyttää pingin edellisestä pelistä
+pelajan 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Один блок с тремя текстами</title>
+    <style>
+        #output {
+            color: black; /* Общий цвет текста */
+            font-size: 18px;
+            display: none; /* По умолчанию текст скрыт */
+        }
+        .red-text {
+            color: red; /* Красный текст */
+        }
+        .green-text {
+            color: green; /* Зелёный текст */
+        }
+        .blue-text {
+            color: blue; /* Синий текст */
+        }
+    </style>
+</head>
+<body>
+    <label for="textarea">nimi:</label>
+    <textarea id="textarea" rows="4" cols="40" placeholder="pelajan nimi "></textarea>
+
+    <div id="output">
+        <p class="red-text">max ping :62</p>
+        <p class="green-text">min ping :43</p>
+        <p class="orange-text">norm ping :54</p>
+    </div>
+
+    <script>
+        // Получаем элементы
+        const textarea = document.getElementById('textarea');
+        const output = document.getElementById('output');
+
+        // Обрабатываем ввод текста
+        textarea.addEventListener('input', () => {
+            const userText = textarea.value; // Получаем текст, введённый пользователем
+
+            // Если текст содержит определённое слово
+            if (userText.includes('anza80')) { // Замените 'показать' на любое слово
+                output.style.display = 'block'; // Показываем блок с текстами
+            } else {
+                output.style.display = 'none'; // Скрываем блок
+            }
+        });
+    </script>
+</body>
+</html>
